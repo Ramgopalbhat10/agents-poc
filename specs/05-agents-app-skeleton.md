@@ -3,6 +3,11 @@
 ## Summary
 Scaffold the agents service using LangChain.js + LangGraph.js and expose a simple HTTP API for chat requests, served via the LangGraph local dev server.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create `apps/agents` with a LangGraph-compatible project structure.
 - Set up LangGraph graph skeleton (orchestrator + placeholder nodes).

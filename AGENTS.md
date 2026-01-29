@@ -37,6 +37,10 @@ No runnable scripts exist yet; the following are **planned** commands from `PRD.
 - If you introduce Git history, use short, imperative commit messages (or Conventional Commits) and keep changes scoped.
 - For PRs, include: a brief summary, linked spec/ADR updates, and screenshots for UI changes.
 
+## Branching
+- Implement each spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
 ## Configuration & Environment Tips
 - Expected env vars (per `PRD.md`): `LLM_PROVIDER`, `LLM_MODEL`, `API_BASE_URL`, `PORT`, `AGENTS_PORT`, `MOCK_API_PORT`.
 - Keep integrations mocked and local-only; no authentication for this POC.

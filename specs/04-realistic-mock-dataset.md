@@ -3,6 +3,11 @@
 ## Summary
 Create a realistic mock dataset for news, tickets, people, desks, and bookings.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create a JSON dataset file used by the mock API.
 - Include realistic quantities and variety across fields (names, teams, locations, statuses).

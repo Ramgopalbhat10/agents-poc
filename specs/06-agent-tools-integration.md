@@ -3,6 +3,11 @@
 ## Summary
 Implement tool functions for each agent and connect them to the mock API.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - News tools: `getLatestNews`, `getTrendingNews`, `searchNews`.
 - ServiceNow tools: `listTickets`, `searchTickets`, `getIncident`.

@@ -3,6 +3,11 @@
 ## Summary
 Add streaming support between the agents service and the web UI using `@langchain/langgraph-sdk`.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Add a streaming endpoint in `apps/agents` (SSE or WebSocket).
 - Wire the web UI to consume streaming responses via `@langchain/langgraph-sdk` (React `useStream`).

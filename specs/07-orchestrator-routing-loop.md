@@ -3,6 +3,11 @@
 ## Summary
 Implement the orchestrator routing logic and iterative loop for multi-tool/agent calls until a sufficient response is produced.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Add routing heuristics based on keywords.
 - Allow sequential and parallel tool calls (as supported by LangGraph).

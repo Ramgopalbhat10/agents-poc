@@ -170,6 +170,10 @@ Minimal env vars:
 - Keep agent orchestration logic readable.
 - Avoid overengineering; this is a POC.
 
+## Branching
+- Implement each spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
 ## Decisions (Confirmed)
 - No authentication for the POC.
 - Include a visible “agent activity” panel in the UI.

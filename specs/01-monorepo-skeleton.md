@@ -3,6 +3,11 @@
 ## Summary
 Create the Bun monorepo workspace skeleton with `apps/` and `packages/` directories and minimal root config to run multiple apps locally.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create directory structure: `apps/`, `packages/`.
 - Add root-level config needed for Bun workspaces (minimal, no strict linting).

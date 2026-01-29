@@ -1,5 +1,9 @@
 # ADR
 
+## Branching
+- Implement each spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
 ## ADR-0001: POC Baseline Architecture
 Date: 2026-01-28
 

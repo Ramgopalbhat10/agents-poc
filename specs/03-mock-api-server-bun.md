@@ -3,6 +3,11 @@
 ## Summary
 Create a Bun-based mock API server that serves JSON data with json-server-style query parameters for filtering.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create `apps/api` with a Bun server.
 - Load dataset from a local JSON file (path configurable).

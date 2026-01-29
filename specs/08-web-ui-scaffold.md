@@ -3,6 +3,11 @@
 ## Summary
 Scaffold the React + Vite web app with Tailwind v4 and shadcn/ui (BaseUI preset), and build the base chat layout.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create `apps/web` via the shadcn CLI BaseUI preset:
   - `bunx --bun shadcn@latest create --preset "https://ui.shadcn.com/init?base=base&style=vega&baseColor=neutral&theme=neutral&iconLibrary=lucide&font=inter&menuAccent=subtle&menuColor=default&radius=default&template=vite" --template vite`

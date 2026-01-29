@@ -3,6 +3,11 @@
 ## Summary
 Implement the agent activity sidebar to show routing decisions and tool calls in real time.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Add UI panel in `apps/web` showing agent events.
 - Stream or poll events from the agents service.

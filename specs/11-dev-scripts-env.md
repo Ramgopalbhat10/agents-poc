@@ -3,6 +3,11 @@
 ## Summary
 Add minimal dev scripts and environment configuration for running the full POC locally.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Add root `dev` scripts to run `web`, `agents`, and `api` together.
 - Run agents via `npx @langchain/langgraph-cli dev` (not Bun).

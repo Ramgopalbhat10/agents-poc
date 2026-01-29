@@ -3,6 +3,11 @@
 ## Summary
 Add a shared types package for core domain models (news, tickets, people, desks, bookings) used by agents, API, and UI.
 
+## Branching
+- Implement this spec in its own branch named `feature/<slug>`.
+- Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
+
+
 ## Scope
 - Create `packages/shared`.
 - Define TypeScript types/interfaces for the core models.
