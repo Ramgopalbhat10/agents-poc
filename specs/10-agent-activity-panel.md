@@ -1,0 +1,34 @@
+# 10-agent-activity-panel
+
+## Summary
+Implement the agent activity sidebar to show routing decisions and tool calls in real time.
+
+## Scope
+- Add UI panel in `apps/web` showing agent events.
+- Stream or poll events from the agents service.
+- Display minimal metadata: agent name, tool name, status, timestamp.
+
+## Acceptance Criteria
+- Panel is visible and updates during a chat run.
+- Events are ordered newest-last.
+- Works in parallel with the main chat stream.
+
+## Out of Scope
+- Full observability dashboards.
+- Persistent logs.
+
+## Dependencies
+- `specs/08-web-ui-scaffold.md`
+- `specs/09-chat-streaming-integration.md`
+
+## References
+- PRD: `PRD.md`
+
+## Dev Log
+- 
+
+## Decisions
+- 
+
+## Next Task
+- `specs/11-dev-scripts-env.md`
