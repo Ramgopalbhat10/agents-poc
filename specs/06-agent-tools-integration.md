@@ -15,6 +15,14 @@ Implement tool functions for each agent and connect them to the mock API.
 - Booking tools: `listAvailableDesks`, `bookDesk`, `cancelBooking`.
 - Wire tools to the mock API base URL.
 
+## Tasks
+- [ ] News tools: `getLatestNews`, `getTrendingNews`, `searchNews`.
+- [ ] ServiceNow tools: `listTickets`, `searchTickets`, `getIncident`.
+- [ ] People tools: `searchPeople`, `getPerson`, `getOrgChart`.
+- [ ] Booking tools: `listAvailableDesks`, `bookDesk`, `cancelBooking`.
+- [ ] Wire tools to the mock API base URL.
+
+
 ## Acceptance Criteria
 - Each tool performs a real HTTP call to the mock API.
 - Tools return structured JSON results.
@@ -33,7 +41,9 @@ Implement tool functions for each agent and connect them to the mock API.
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

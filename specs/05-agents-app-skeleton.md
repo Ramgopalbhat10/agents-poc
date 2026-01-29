@@ -14,6 +14,13 @@ Scaffold the agents service using LangChain.js + LangGraph.js and expose a simpl
 - Provide one HTTP endpoint for chat requests (non-streaming first).
 - Run locally using `npx @langchain/langgraph-cli dev`.
 
+## Tasks
+- [ ] Create `apps/agents` with a LangGraph-compatible project structure.
+- [ ] Set up LangGraph graph skeleton (orchestrator + placeholder nodes).
+- [ ] Provide one HTTP endpoint for chat requests (non-streaming first).
+- [ ] Run locally using `npx @langchain/langgraph-cli dev`.
+
+
 ## Acceptance Criteria
 - Agents service starts locally via the LangGraph CLI dev server.
 - POST request accepts user input and returns a stubbed response.
@@ -31,7 +38,9 @@ Scaffold the agents service using LangChain.js + LangGraph.js and expose a simpl
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

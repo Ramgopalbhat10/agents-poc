@@ -14,6 +14,13 @@ Implement the orchestrator routing logic and iterative loop for multi-tool/agent
 - Add a max-steps guard (e.g., 6 tool calls).
 - Produce a merged response across agents.
 
+## Tasks
+- [ ] Add routing heuristics based on keywords.
+- [ ] Allow sequential and parallel tool calls (as supported by LangGraph).
+- [ ] Add a max-steps guard (e.g., 6 tool calls).
+- [ ] Produce a merged response across agents.
+
+
 ## Acceptance Criteria
 - Orchestrator routes to at least two different agents correctly.
 - Loop stops when response is adequate or max steps hit.
@@ -31,7 +38,9 @@ Implement the orchestrator routing logic and iterative loop for multi-tool/agent
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

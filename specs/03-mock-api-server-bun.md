@@ -14,6 +14,13 @@ Create a Bun-based mock API server that serves JSON data with json-server-style 
 - Implement GET endpoints: `/news`, `/tickets`, `/people`, `/desks`, `/bookings`.
 - Support basic query filtering (exact match and `_like` style for strings).
 
+## Tasks
+- [ ] Create `apps/api` with a Bun server.
+- [ ] Load dataset from a local JSON file (path configurable).
+- [ ] Implement GET endpoints: `/news`, `/tickets`, `/people`, `/desks`, `/bookings`.
+- [ ] Support basic query filtering (exact match and `_like` style for strings).
+
+
 ## Acceptance Criteria
 - Server starts locally and responds with JSON arrays for each endpoint.
 - Query params work for at least: `?q=`, `?field=`, `?field_like=`.
@@ -31,7 +38,9 @@ Create a Bun-based mock API server that serves JSON data with json-server-style 
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

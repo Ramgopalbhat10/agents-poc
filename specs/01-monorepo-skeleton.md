@@ -13,6 +13,12 @@ Create the Bun monorepo workspace skeleton with `apps/` and `packages/` director
 - Add root-level config needed for Bun workspaces (minimal, no strict linting).
 - Add placeholder READMEs in key folders (optional, short).
 
+## Tasks
+- [x] Create directory structure: `apps/`, `packages/`.
+- [x] Add root-level config needed for Bun workspaces (minimal, no strict linting).
+- [x] Add placeholder READMEs in key folders (optional, short).
+
+
 ## Acceptance Criteria
 - Workspace structure exists and is committed to disk.
 - Root config recognizes `apps/*` and `packages/*` as workspaces.
@@ -29,10 +35,13 @@ Create the Bun monorepo workspace skeleton with `apps/` and `packages/` director
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+| 2026-01-29 | Created root `package.json` with Bun workspaces for `apps/*` and `packages/*`. |
+| 2026-01-29 | Added `apps/` and `packages/` directories with placeholder READMEs. |
 
 ## Decisions
-- 
+- Minimal root config only (no lint/test tooling) per POC constraints.
 
 ## Next Task
 - `specs/02-shared-types-schemas.md`

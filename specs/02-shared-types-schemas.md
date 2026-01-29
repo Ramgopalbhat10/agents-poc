@@ -13,6 +13,12 @@ Add a shared types package for core domain models (news, tickets, people, desks,
 - Define TypeScript types/interfaces for the core models.
 - Export types from a single entry point.
 
+## Tasks
+- [ ] Create `packages/shared`.
+- [ ] Define TypeScript types/interfaces for the core models.
+- [ ] Export types from a single entry point.
+
+
 ## Acceptance Criteria
 - Shared package exists and is referenced by path (no publish needed).
 - Types cover fields listed in `PRD.md` data models.
@@ -29,7 +35,9 @@ Add a shared types package for core domain models (news, tickets, people, desks,
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

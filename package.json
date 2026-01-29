@@ -1,0 +1,8 @@
+{
+  "name": "agents-poc",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

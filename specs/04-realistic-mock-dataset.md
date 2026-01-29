@@ -13,6 +13,12 @@ Create a realistic mock dataset for news, tickets, people, desks, and bookings.
 - Include realistic quantities and variety across fields (names, teams, locations, statuses).
 - Ensure referential consistency (e.g., booking deskId exists).
 
+## Tasks
+- [ ] Create a JSON dataset file used by the mock API.
+- [ ] Include realistic quantities and variety across fields (names, teams, locations, statuses).
+- [ ] Ensure referential consistency (e.g., booking deskId exists).
+
+
 ## Acceptance Criteria
 - Dataset file exists and loads in the mock API without errors.
 - Each collection has enough records to demo searching and filtering.
@@ -30,7 +36,9 @@ Create a realistic mock dataset for news, tickets, people, desks, and bookings.
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

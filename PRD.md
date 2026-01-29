@@ -174,6 +174,12 @@ Minimal env vars:
 - Implement each spec in its own branch named `feature/<slug>`.
 - Example: `specs/01-monorepo-skeleton.md` => `feature/monorepo-skeleton`.
 
+## Spec Completion Checklist
+- Update the spec’s `## Dev Log` as a dated table entry (`YYYY-MM-DD`) describing completed work.
+- Add any relevant `## Decisions` entries for tradeoffs or constraints.
+- Update `specs/PROGRESS.md` so the current task shows completed status on the active feature branch.
+- Keep the spec’s `## Tasks` checklist updated, marking items complete as work finishes.
+
 ## Decisions (Confirmed)
 - No authentication for the POC.
 - Include a visible “agent activity” panel in the UI.

@@ -13,6 +13,12 @@ Implement the agent activity sidebar to show routing decisions and tool calls in
 - Stream or poll events from the agents service.
 - Display minimal metadata: agent name, tool name, status, timestamp.
 
+## Tasks
+- [ ] Add UI panel in `apps/web` showing agent events.
+- [ ] Stream or poll events from the agents service.
+- [ ] Display minimal metadata: agent name, tool name, status, timestamp.
+
+
 ## Acceptance Criteria
 - Panel is visible and updates during a chat run.
 - Events are ordered newest-last.
@@ -30,7 +36,9 @@ Implement the agent activity sidebar to show routing decisions and tool calls in
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 

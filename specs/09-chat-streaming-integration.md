@@ -13,6 +13,12 @@ Add streaming support between the agents service and the web UI using `@langchai
 - Wire the web UI to consume streaming responses via `@langchain/langgraph-sdk` (React `useStream`).
 - Provide a fallback non-streaming mode for local debug.
 
+## Tasks
+- [ ] Add a streaming endpoint in `apps/agents` (SSE or WebSocket).
+- [ ] Wire the web UI to consume streaming responses via `@langchain/langgraph-sdk` (React `useStream`).
+- [ ] Provide a fallback non-streaming mode for local debug.
+
+
 ## Acceptance Criteria
 - UI displays partial responses as they stream.
 - Streaming endpoint works for at least one sample query.
@@ -30,7 +36,9 @@ Add streaming support between the agents service and the web UI using `@langchai
 - PRD: `PRD.md`
 
 ## Dev Log
-- 
+| Date | Entry |
+| --- | --- |
+|  |  |
 
 ## Decisions
 - 
