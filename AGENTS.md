@@ -51,6 +51,7 @@ No runnable scripts exist yet; the following are **planned** commands from `PRD.
 ## Configuration & Environment Tips
 - Expected env vars (per `PRD.md`): `LLM_PROVIDER`, `LLM_MODEL`, `API_BASE_URL`, `PORT`, `AGENTS_PORT`, `MOCK_API_PORT`.
 - Keep integrations mocked and local-only; no authentication for this POC.
+- If GitHub SSH auth fails, ensure `~/.ssh/config` points `github.com` to `~/.ssh/id_ed25519_codex` with `IdentitiesOnly yes`.
 
 ## Agent-Specific Notes
 - The agents service must run via the LangGraph CLI dev server, not Bun.
