@@ -14,9 +14,9 @@ Add a shared types package for core domain models (news, tickets, people, desks,
 - Export types from a single entry point.
 
 ## Tasks
-- [ ] Create `packages/shared`.
-- [ ] Define TypeScript types/interfaces for the core models.
-- [ ] Export types from a single entry point.
+- [x] Create `packages/shared`.
+- [x] Define TypeScript types/interfaces for the core models.
+- [x] Export types from a single entry point.
 
 
 ## Acceptance Criteria
@@ -37,10 +37,10 @@ Add a shared types package for core domain models (news, tickets, people, desks,
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-29 | Added `packages/shared` with shared TypeScript interfaces and a single export entry point. |
 
 ## Decisions
-- 
+- Use string-typed date fields with no runtime validation.
 
 ## Next Task
 - `specs/03-mock-api-server-bun.md`
