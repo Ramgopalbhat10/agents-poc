@@ -1,3 +1,6 @@
+import { useMemo, useState } from "react";
+import type { Message } from "@langchain/langgraph-sdk";
+import { useStream } from "@langchain/langgraph-sdk/react";
 import {
   Bell,
   ChevronRight,
@@ -21,25 +24,90 @@ const focusItems = [
   { label: "Austin office open house", tone: "note" },
 ];
 
-const sampleMessages = [
-  {
-    from: "You",
-    time: "09:32",
-    body: "Any updates on the VPN incident and desk availability in Austin?",
-  },
-  {
-    from: "Orchestrator",
-    time: "09:33",
-    body: "Routing to ServiceNow and Booking agents. Pulling latest status and open desks.",
-  },
-  {
-    from: "Orchestrator",
-    time: "09:34",
-    body: "ServiceNow: 2 open VPN tickets, SLA in 4h. Booking: 3 desks open in Austin for today.",
-  },
-];
+const API_URL = import.meta.env.VITE_LANGGRAPH_API_URL ?? "http://localhost:2024";
+const ASSISTANT_ID = import.meta.env.VITE_LANGGRAPH_ASSISTANT_ID ?? "orchestrator";
+const STREAMING_ENABLED = (import.meta.env.VITE_STREAMING ?? "true") !== "false";
 
 export default function App() {
+  const thread = useStream<{ messages: Message[] }>({
+    apiUrl: API_URL,
+    assistantId: ASSISTANT_ID,
+    messagesKey: "messages",
+  });
+  const [message, setMessage] = useState("");
+  const [fallbackMessages, setFallbackMessages] = useState<Message[]>([]);
+  const [isFallbackLoading, setIsFallbackLoading] = useState(false);
+
+  const messages = useMemo(
+    () => (STREAMING_ENABLED ? thread.messages : fallbackMessages),
+    [STREAMING_ENABLED, fallbackMessages, thread.messages],
+  );
+
+  const sendMessage = async () => {
+    const trimmed = message.trim();
+    if (!trimmed) return;
+
+    setMessage("");
+
+    if (STREAMING_ENABLED) {
+      thread.submit({
+        messages: [{ type: "human", content: trimmed }],
+      });
+      return;
+    }
+
+    setIsFallbackLoading(true);
+    setFallbackMessages((prev) => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        type: "human",
+        content: trimmed,
+      },
+    ]);
+
+    try {
+      const response = await fetch(`${API_URL}/runs/wait`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          assistant_id: ASSISTANT_ID,
+          input: { messages: [{ type: "human", content: trimmed }] },
+        }),
+      });
+      const payload = await response.json();
+      setFallbackMessages((prev) => [
+        ...prev,
+        {
+          id: crypto.randomUUID(),
+          type: "ai",
+          content: JSON.stringify(payload, null, 2),
+        },
+      ]);
+    } catch (error) {
+      setFallbackMessages((prev) => [
+        ...prev,
+        {
+          id: crypto.randomUUID(),
+          type: "ai",
+          content: `Error: ${(error as Error).message}`,
+        },
+      ]);
+    } finally {
+      setIsFallbackLoading(false);
+    }
+  };
+
+  const renderContent = (content: Message["content"]) => {
+    if (typeof content === "string") return content;
+    if (Array.isArray(content)) {
+      return content
+        .map((part) => (typeof part === "string" ? part : JSON.stringify(part)))
+        .join(" ");
+    }
+    return JSON.stringify(content);
+  };
+
   return (
     <div className="app-shell text-slate-900">
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl gap-6 px-6 py-8">
@@ -131,20 +199,27 @@ export default function App() {
               <span>Live routing</span>
             </div>
             <div className="flex flex-1 flex-col gap-4">
-              {sampleMessages.map((message, index) => (
+              {messages.length === 0 ? (
+                <div className="rounded-3xl border border-dashed border-slate-200/70 px-6 py-5 text-sm text-slate-500">
+                  Ask something like: “Show me open VPN tickets and desk availability in Austin.”
+                </div>
+              ) : null}
+              {messages.map((item, index) => (
                 <div
-                  key={`${message.time}-${index}`}
+                  key={`${item.id ?? "msg"}-${index}`}
                   className={`max-w-[78%] rounded-3xl border border-slate-200/70 px-5 py-4 shadow-sm ${
-                    message.from === "You"
+                    item.type === "human"
                       ? "self-end bg-slate-900 text-white"
                       : "bg-white/80 text-slate-700"
                   }`}
                 >
                   <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] opacity-70">
                     <MessageCircle className="h-3 w-3" />
-                    {message.from} - {message.time}
+                    {item.type === "human" ? "You" : "Orchestrator"}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed">{message.body}</p>
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
+                    {renderContent(item.content)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -153,9 +228,20 @@ export default function App() {
               <input
                 className="flex-1 bg-transparent text-sm outline-none"
                 placeholder="Ask for updates or book a desk..."
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    event.preventDefault();
+                    void sendMessage();
+                  }
+                }}
               />
-              <button className="rounded-full bg-slate-900 px-4 py-2 text-sm text-white">
-                Send
+              <button
+                className="rounded-full bg-slate-900 px-4 py-2 text-sm text-white"
+                onClick={() => void sendMessage()}
+              >
+                {STREAMING_ENABLED ? (thread.isLoading ? "Streaming..." : "Send") : isFallbackLoading ? "Working..." : "Send"}
               </button>
             </div>
           </section>

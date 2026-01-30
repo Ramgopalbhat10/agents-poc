@@ -14,9 +14,9 @@ Add streaming support between the agents service and the web UI using `@langchai
 - Provide a fallback non-streaming mode for local debug.
 
 ## Tasks
-- [ ] Add a streaming endpoint in `apps/agents` (SSE or WebSocket).
-- [ ] Wire the web UI to consume streaming responses via `@langchain/langgraph-sdk` (React `useStream`).
-- [ ] Provide a fallback non-streaming mode for local debug.
+- [x] Add a streaming endpoint in `apps/agents` (SSE or WebSocket).
+- [x] Wire the web UI to consume streaming responses via `@langchain/langgraph-sdk` (React `useStream`).
+- [x] Provide a fallback non-streaming mode for local debug.
 
 
 ## Acceptance Criteria
@@ -38,7 +38,7 @@ Add streaming support between the agents service and the web UI using `@langchai
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Wired the UI to LangGraph streaming with a non-streaming fallback and documented env flags. |
 
 ## Decisions
 - 

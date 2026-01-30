@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/08-web-ui-scaffold.md` (completed on feature/web-ui-scaffold)
+Current task: `specs/09-chat-streaming-integration.md` (completed on feature/chat-streaming-integration)
 
-Next suggested task: `specs/09-chat-streaming-integration.md`
+Next suggested task: `specs/10-agent-activity-panel.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.
