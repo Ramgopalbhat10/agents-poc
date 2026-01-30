@@ -14,9 +14,9 @@ Implement the agent activity sidebar to show routing decisions and tool calls in
 - Display minimal metadata: agent name, tool name, status, timestamp.
 
 ## Tasks
-- [ ] Add UI panel in `apps/web` showing agent events.
-- [ ] Stream or poll events from the agents service.
-- [ ] Display minimal metadata: agent name, tool name, status, timestamp.
+- [x] Add UI panel in `apps/web` showing agent events.
+- [x] Stream or poll events from the agents service.
+- [x] Display minimal metadata: agent name, tool name, status, timestamp.
 
 
 ## Acceptance Criteria
@@ -38,7 +38,7 @@ Implement the agent activity sidebar to show routing decisions and tool calls in
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Added an activity sidebar fed by LangGraph update events and agent activity logs. |
 
 ## Decisions
 - 

@@ -16,6 +16,13 @@ import {
 } from "./tools";
 import { generateAgentResponse, generateFinalResponse } from "./llm";
 
+type ActivityEvent = {
+  agent: string;
+  tool: string;
+  status: "started" | "completed" | "skipped";
+  timestamp: string;
+};
+
 const AgentState = Annotation.Root({
   messages: Annotation<BaseMessage[]>({
     reducer: messagesStateReducer,
@@ -41,6 +48,10 @@ const AgentState = Annotation.Root({
     reducer: (left, right) => ({ ...left, ...right }),
     default: () => ({}),
   }),
+  activity: Annotation<ActivityEvent[]>({
+    reducer: (left, right) => left.concat(right ?? []),
+    default: () => [],
+  }),
 });
 
 type GraphState = typeof AgentState.State;
@@ -48,6 +59,13 @@ type GraphState = typeof AgentState.State;
 type RouteKey = "news" | "servicenow" | "people" | "booking" | "clarify";
 
 const MAX_STEPS = 6;
+const now = () => new Date().toISOString();
+const activity = (agent: string, tool: string, status: ActivityEvent["status"]) => ({
+  agent,
+  tool,
+  status,
+  timestamp: now(),
+});
 
 const orchestrator = async (state: GraphState) => {
   const lastMessage = state.messages[state.messages.length - 1];
@@ -68,6 +86,9 @@ const orchestrator = async (state: GraphState) => {
     routes: routeList,
     pendingRoutes: routeList,
     parallel,
+    activity: [
+      activity("orchestrator", "route", "completed"),
+    ],
   };
 };
 
@@ -111,6 +132,10 @@ const makeStub = (label: string) => async (state: GraphState) => {
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
       agentResults: { [label]: { results, trending, responseText } },
+      activity: [
+        activity("news", "searchNews/getLatestNews", "completed"),
+        activity("news", "llm", "completed"),
+      ],
       messages: [new AIMessage(responseText)],
     };
   }
@@ -130,6 +155,11 @@ const makeStub = (label: string) => async (state: GraphState) => {
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
       agentResults: { [label]: { results, incidentDetails, responseText } },
+      activity: [
+        activity("servicenow", "searchTickets/listTickets", "completed"),
+        incident ? activity("servicenow", "getIncident", "completed") : activity("servicenow", "getIncident", "skipped"),
+        activity("servicenow", "llm", "completed"),
+      ],
       messages: [new AIMessage(responseText)],
     };
   }
@@ -149,6 +179,11 @@ const makeStub = (label: string) => async (state: GraphState) => {
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
       agentResults: { [label]: { results, orgChart, responseText } },
+      activity: [
+        activity("people", "searchPeople", "completed"),
+        managerId ? activity("people", "getOrgChart", "completed") : activity("people", "getOrgChart", "skipped"),
+        activity("people", "llm", "completed"),
+      ],
       messages: [new AIMessage(responseText)],
     };
   }
@@ -176,6 +211,15 @@ const makeStub = (label: string) => async (state: GraphState) => {
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
       agentResults: { [label]: { availableDesks: desks, bookingAttempt, responseText } },
+      activity: [
+        activity("booking", "listAvailableDesks", "completed"),
+        bookingId
+          ? activity("booking", "cancelBooking", "completed")
+          : deskId && userId
+            ? activity("booking", "bookDesk", "completed")
+            : activity("booking", "bookDesk", "skipped"),
+        activity("booking", "llm", "completed"),
+      ],
       messages: [new AIMessage(responseText)],
     };
   }
@@ -185,6 +229,7 @@ const makeStub = (label: string) => async (state: GraphState) => {
     pendingRoutes: state.parallel
       ? state.pendingRoutes
       : state.pendingRoutes.filter((route) => route !== label),
+    activity: [activity(label, "llm", "completed")],
     messages: [new AIMessage(`[stub] ${label} agent received: ${content}`.trim())],
   };
 };
@@ -215,6 +260,7 @@ const mergeResults = async (state: GraphState) => {
 
   return {
     pendingRoutes: [],
+    activity: [activity("orchestrator", "merge", "completed")],
     messages: [new AIMessage(summaryText)],
   };
 };

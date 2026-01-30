@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/09-chat-streaming-integration.md` (completed on feature/chat-streaming-integration)
+Current task: `specs/10-agent-activity-panel.md` (completed on feature/agent-activity-panel)
 
-Next suggested task: `specs/10-agent-activity-panel.md`
+Next suggested task: `specs/11-dev-scripts-env.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.

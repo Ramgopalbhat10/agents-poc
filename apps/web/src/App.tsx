@@ -28,11 +28,32 @@ const API_URL = import.meta.env.VITE_LANGGRAPH_API_URL ?? "http://localhost:2024
 const ASSISTANT_ID = import.meta.env.VITE_LANGGRAPH_ASSISTANT_ID ?? "orchestrator";
 const STREAMING_ENABLED = (import.meta.env.VITE_STREAMING ?? "true") !== "false";
 
+type ActivityEvent = {
+  agent: string;
+  tool: string;
+  status: "started" | "completed" | "skipped";
+  timestamp: string;
+};
+
 export default function App() {
-  const thread = useStream<{ messages: Message[] }>({
+  const [activityEvents, setActivityEvents] = useState<ActivityEvent[]>([]);
+  const thread = useStream<{ messages: Message[]; activity?: ActivityEvent[] }>({
     apiUrl: API_URL,
     assistantId: ASSISTANT_ID,
     messagesKey: "messages",
+    onUpdateEvent: (data) => {
+      const updates = Object.values(data ?? {});
+      const nextEvents: ActivityEvent[] = [];
+      updates.forEach((update) => {
+        const typed = update as { activity?: ActivityEvent[] };
+        if (typed?.activity?.length) {
+          nextEvents.push(...typed.activity);
+        }
+      });
+      if (nextEvents.length) {
+        setActivityEvents((prev) => prev.concat(nextEvents));
+      }
+    },
   });
   const [message, setMessage] = useState("");
   const [fallbackMessages, setFallbackMessages] = useState<Message[]>([]);
@@ -48,11 +69,12 @@ export default function App() {
     if (!trimmed) return;
 
     setMessage("");
+    setActivityEvents([]);
 
     if (STREAMING_ENABLED) {
       thread.submit({
         messages: [{ type: "human", content: trimmed }],
-      });
+      }, { streamMode: ["messages", "updates", "events"] });
       return;
     }
 
@@ -73,6 +95,7 @@ export default function App() {
         body: JSON.stringify({
           assistant_id: ASSISTANT_ID,
           input: { messages: [{ type: "human", content: trimmed }] },
+          stream_mode: ["messages", "updates", "events"],
         }),
       });
       const payload = await response.json();
@@ -246,6 +269,35 @@ export default function App() {
             </div>
           </section>
         </main>
+
+        <aside className="hidden w-72 shrink-0 flex-col gap-4 rounded-[32px] border border-black/10 bg-white/70 p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.45)] backdrop-blur xl:flex">
+          <div className="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-400">
+            <span>Activity</span>
+            <span>{activityEvents.length} events</span>
+          </div>
+          <div className="flex-1 space-y-3 overflow-auto pr-1 text-sm">
+            {activityEvents.length === 0 ? (
+              <div className="rounded-2xl border border-dashed border-slate-200/70 px-4 py-3 text-xs text-slate-500">
+                Activity will appear as the agents route and call tools.
+              </div>
+            ) : null}
+            {activityEvents.map((event, index) => (
+              <div
+                key={`${event.timestamp}-${index}`}
+                className="rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-3 shadow-sm"
+              >
+                <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-slate-400">
+                  <span>{event.agent}</span>
+                  <span>{event.status}</span>
+                </div>
+                <p className="mt-2 text-sm text-slate-700">{event.tool}</p>
+                <p className="mt-1 text-xs text-slate-400">
+                  {new Date(event.timestamp).toLocaleTimeString()}
+                </p>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
     </div>
   );
