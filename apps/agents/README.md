@@ -11,6 +11,11 @@ The server exposes HTTP endpoints documented at `http://localhost:2024/docs`.
 
 Set `API_BASE_URL` to point tools at the mock API (defaults to `http://localhost:4000`).
 
+## LLM setup (OpenAI-compatible)
+- `OPENAI_API_KEY` (required for LLM responses)
+- `OPENAI_BASE_URL` (optional for compatible providers)
+- `LLM_MODEL` (default: `gpt-5`)
+
 Example non-streaming request (stateless run):
 
 ```

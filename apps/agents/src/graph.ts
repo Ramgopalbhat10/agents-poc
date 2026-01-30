@@ -14,6 +14,7 @@ import {
   searchPeople,
   searchTickets,
 } from "./tools.js";
+import { generateAgentResponse, generateFinalResponse } from "./llm.js";
 
 const AgentState = Annotation.Root({
   messages: Annotation<BaseMessage[]>({
@@ -94,21 +95,23 @@ const extractDate = (text: string) => {
 const makeStub = (label: string) => async (state: GraphState) => {
   const lastMessage = state.messages[state.messages.length - 1];
   const content = typeof lastMessage?.content === "string" ? lastMessage.content : "";
+  const question = content || "Provide the latest available information.";
 
   if (label === "news") {
     const results = content ? await searchNews(content) : await getLatestNews();
     const trending = await getTrendingNews(3);
+    const responseText = await generateAgentResponse({
+      agent: "news",
+      question,
+      toolData: { results, trending },
+    });
     return {
       steps: 1,
       pendingRoutes: state.parallel
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
-      agentResults: { [label]: results },
-      messages: [
-        new AIMessage(
-          JSON.stringify({ agent: "news", results, trending }, null, 2),
-        ),
-      ],
+      agentResults: { [label]: { results, trending, responseText } },
+      messages: [new AIMessage(responseText)],
     };
   }
 
@@ -116,17 +119,18 @@ const makeStub = (label: string) => async (state: GraphState) => {
     const results = content ? await searchTickets(content) : await listTickets();
     const incident = content.match(/inc_\\d+/)?.[0];
     const incidentDetails = incident ? await getIncident(incident) : null;
+    const responseText = await generateAgentResponse({
+      agent: "servicenow",
+      question,
+      toolData: { results, incidentDetails },
+    });
     return {
       steps: 1,
       pendingRoutes: state.parallel
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
-      agentResults: { [label]: results },
-      messages: [
-        new AIMessage(
-          JSON.stringify({ agent: "servicenow", results, incidentDetails }, null, 2),
-        ),
-      ],
+      agentResults: { [label]: { results, incidentDetails, responseText } },
+      messages: [new AIMessage(responseText)],
     };
   }
 
@@ -134,17 +138,18 @@ const makeStub = (label: string) => async (state: GraphState) => {
     const results = content ? await searchPeople(content) : await searchPeople();
     const managerId = content.match(/emp_\\d+/)?.[0];
     const orgChart = managerId ? await getOrgChart(managerId) : null;
+    const responseText = await generateAgentResponse({
+      agent: "people",
+      question,
+      toolData: { results, orgChart },
+    });
     return {
       steps: 1,
       pendingRoutes: state.parallel
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
-      agentResults: { [label]: results },
-      messages: [
-        new AIMessage(
-          JSON.stringify({ agent: "people", results, orgChart }, null, 2),
-        ),
-      ],
+      agentResults: { [label]: { results, orgChart, responseText } },
+      messages: [new AIMessage(responseText)],
     };
   }
 
@@ -159,22 +164,19 @@ const makeStub = (label: string) => async (state: GraphState) => {
       : deskId && userId
         ? await bookDesk(userId, deskId, date)
         : null;
+    const responseText = await generateAgentResponse({
+      agent: "booking",
+      question,
+      toolData: { date, availableDesks: desks, bookingAttempt },
+    });
 
     return {
       steps: 1,
       pendingRoutes: state.parallel
         ? state.pendingRoutes
         : state.pendingRoutes.filter((route) => route !== label),
-      agentResults: { [label]: { availableDesks: desks, bookingAttempt } },
-      messages: [
-        new AIMessage(
-          JSON.stringify(
-            { agent: "booking", date, availableDesks: desks, bookingAttempt },
-            null,
-            2,
-          ),
-        ),
-      ],
+      agentResults: { [label]: { availableDesks: desks, bookingAttempt, responseText } },
+      messages: [new AIMessage(responseText)],
     };
   }
 
@@ -193,16 +195,27 @@ const clarify = async () => ({
   ],
 });
 
-const mergeResults = (state: GraphState) => {
-  const summary = {
-    steps: state.steps,
-    routes: state.routes,
-    results: state.agentResults,
-  };
+const mergeResults = async (state: GraphState) => {
+  const done = state.parallel || state.pendingRoutes.length === 0;
+  const shouldSummarize = done && state.routes.length > 1;
+
+  if (!shouldSummarize) {
+    return {
+      pendingRoutes: state.parallel ? [] : state.pendingRoutes,
+    };
+  }
+
+  const lastMessage = state.messages[state.messages.length - 1];
+  const question = typeof lastMessage?.content === "string" ? lastMessage.content : "";
+
+  const summaryText = await generateFinalResponse({
+    question,
+    agentSummaries: state.agentResults,
+  });
 
   return {
-    pendingRoutes: state.parallel ? [] : state.pendingRoutes,
-    messages: [new AIMessage(JSON.stringify(summary, null, 2))],
+    pendingRoutes: [],
+    messages: [new AIMessage(summaryText)],
   };
 };
 

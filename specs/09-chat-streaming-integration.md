@@ -39,6 +39,7 @@ Add streaming support between the agents service and the web UI using `@langchai
 | Date | Entry |
 | --- | --- |
 | 2026-01-30 | Wired the UI to LangGraph streaming with a non-streaming fallback and documented env flags. |
+| 2026-01-30 | Added OpenAI-compatible LLM responses for agent and orchestrator outputs. |
 
 ## Decisions
 - 
