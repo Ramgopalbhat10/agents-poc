@@ -13,8 +13,8 @@ import {
   searchNews,
   searchPeople,
   searchTickets,
-} from "./tools.js";
-import { generateAgentResponse, generateFinalResponse } from "./llm.js";
+} from "./tools";
+import { generateAgentResponse, generateFinalResponse } from "./llm";
 
 const AgentState = Annotation.Root({
   messages: Annotation<BaseMessage[]>({

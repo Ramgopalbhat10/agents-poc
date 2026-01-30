@@ -18,7 +18,7 @@ Set `API_BASE_URL` to point tools at the mock API (defaults to `http://localhost
 
 ## Notes
 - This app uses `@langchain/openai` for LLM calls and `zod`-validated tools.
-- TypeScript module resolution is set to `NodeNext` in `apps/agents/tsconfig.json` for ESM compatibility.
+- TypeScript module resolution is set to `Bundler` in `apps/agents/tsconfig.json`.
 
 Example non-streaming request (stateless run):
 
