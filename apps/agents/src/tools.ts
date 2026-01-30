@@ -1,3 +1,6 @@
+import { tool } from "@langchain/core/tools";
+import * as z from "zod";
+
 const DEFAULT_API_BASE_URL = "http://localhost:4000";
 
 const apiBaseUrl = process.env.API_BASE_URL ?? DEFAULT_API_BASE_URL;
@@ -24,88 +27,119 @@ const fetchJson = async (path: string, params?: Record<string, string | undefine
 const sortByDateDesc = (items: JsonRecord[], field = "date") =>
   [...items].sort((a, b) => String(b[field] ?? "").localeCompare(String(a[field] ?? "")));
 
-export const getLatestNews = async (limit = 5) => {
-  try {
+const getLatestNewsTool = tool(
+  async ({ limit }: { limit?: number }) => {
     const items = (await fetchJson("/news")) as JsonRecord[];
-    return sortByDateDesc(items, "date").slice(0, limit);
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+    return sortByDateDesc(items, "date").slice(0, limit ?? 5);
+  },
+  {
+    name: "getLatestNews",
+    description: "Get the latest news items.",
+    schema: z.object({ limit: z.number().int().min(1).max(20).optional() }),
+  },
+);
 
-export const getTrendingNews = async (limit = 5) => {
-  try {
+const getTrendingNewsTool = tool(
+  async ({ limit }: { limit?: number }) => {
     const items = (await fetchJson("/news")) as JsonRecord[];
-    return sortByDateDesc(items, "date").slice(0, limit);
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+    return sortByDateDesc(items, "date").slice(0, limit ?? 5);
+  },
+  {
+    name: "getTrendingNews",
+    description: "Get trending news items.",
+    schema: z.object({ limit: z.number().int().min(1).max(20).optional() }),
+  },
+);
 
-export const searchNews = async (query: string) => {
-  try {
+const searchNewsTool = tool(
+  async ({ query }: { query: string }) => {
     return (await fetchJson("/news", { q: query })) as JsonRecord[];
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "searchNews",
+    description: "Search news items by keyword.",
+    schema: z.object({ query: z.string().min(1) }),
+  },
+);
 
-export const listTickets = async (status?: string) => {
-  try {
+const listTicketsTool = tool(
+  async ({ status }: { status?: string }) => {
     return (await fetchJson("/tickets", status ? { status } : undefined)) as JsonRecord[];
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "listTickets",
+    description: "List tickets with an optional status filter.",
+    schema: z.object({ status: z.string().min(1).optional() }),
+  },
+);
 
-export const searchTickets = async (query: string) => {
-  try {
+const searchTicketsTool = tool(
+  async ({ query }: { query: string }) => {
     return (await fetchJson("/tickets", { q: query })) as JsonRecord[];
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "searchTickets",
+    description: "Search tickets by keyword.",
+    schema: z.object({ query: z.string().min(1) }),
+  },
+);
 
-export const getIncident = async (id: string) => {
-  try {
+const getIncidentTool = tool(
+  async ({ id }: { id: string }) => {
     const items = (await fetchJson("/tickets", { id })) as JsonRecord[];
     return items[0] ?? null;
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "getIncident",
+    description: "Get a single incident by id.",
+    schema: z.object({ id: z.string().min(1) }),
+  },
+);
 
-export const searchPeople = async (name?: string, team?: string, location?: string) => {
-  try {
+const searchPeopleTool = tool(
+  async ({ name, team, location }: { name?: string; team?: string; location?: string }) => {
     const params: Record<string, string | undefined> = {};
     if (name) params.q = name;
     if (team) params.team = team;
     if (location) params.location = location;
     return (await fetchJson("/people", params)) as JsonRecord[];
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "searchPeople",
+    description: "Search people by name, team, or location.",
+    schema: z.object({
+      name: z.string().min(1).optional(),
+      team: z.string().min(1).optional(),
+      location: z.string().min(1).optional(),
+    }),
+  },
+);
 
-export const getPerson = async (id: string) => {
-  try {
+const getPersonTool = tool(
+  async ({ id }: { id: string }) => {
     const items = (await fetchJson("/people", { id })) as JsonRecord[];
     return items[0] ?? null;
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "getPerson",
+    description: "Get a person by id.",
+    schema: z.object({ id: z.string().min(1) }),
+  },
+);
 
-export const getOrgChart = async (managerId: string) => {
-  try {
+const getOrgChartTool = tool(
+  async ({ managerId }: { managerId: string }) => {
     return (await fetchJson("/people", { managerId })) as JsonRecord[];
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "getOrgChart",
+    description: "Get org chart for a manager.",
+    schema: z.object({ managerId: z.string().min(1) }),
+  },
+);
 
-export const listAvailableDesks = async (date: string, location?: string) => {
-  try {
+const listAvailableDesksTool = tool(
+  async ({ date, location }: { date: string; location?: string }) => {
     const desks = (await fetchJson("/desks", location ? { location } : undefined)) as JsonRecord[];
     const bookings = (await fetchJson("/bookings", { date })) as JsonRecord[];
     const bookedIds = new Set(
@@ -113,15 +147,20 @@ export const listAvailableDesks = async (date: string, location?: string) => {
         .filter((booking) => booking.status !== "cancelled")
         .map((booking) => String(booking.deskId)),
     );
-
     return desks.filter((desk) => !bookedIds.has(String(desk.id)));
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "listAvailableDesks",
+    description: "List available desks for a given date and location.",
+    schema: z.object({
+      date: z.string().min(1),
+      location: z.string().min(1).optional(),
+    }),
+  },
+);
 
-export const bookDesk = async (userId: string, deskId: string, date: string) => {
-  try {
+const bookDeskTool = tool(
+  async ({ userId, deskId, date }: { userId: string; deskId: string; date: string }) => {
     const existing = (await fetchJson("/bookings", { deskId, date })) as JsonRecord[];
     const conflicts = existing.filter((booking) => booking.status !== "cancelled");
     if (conflicts.length > 0) {
@@ -133,13 +172,20 @@ export const bookDesk = async (userId: string, deskId: string, date: string) => 
       message: "Mock API is read-only. Booking would be created here.",
       booking: { userId, deskId, date, status: "pending" },
     };
-  } catch (error) {
-    return { error: (error as Error).message };
-  }
-};
+  },
+  {
+    name: "bookDesk",
+    description: "Book a desk for a user on a date.",
+    schema: z.object({
+      userId: z.string().min(1),
+      deskId: z.string().min(1),
+      date: z.string().min(1),
+    }),
+  },
+);
 
-export const cancelBooking = async (bookingId: string) => {
-  try {
+const cancelBookingTool = tool(
+  async ({ bookingId }: { bookingId: string }) => {
     const existing = (await fetchJson("/bookings", { id: bookingId })) as JsonRecord[];
     if (existing.length === 0) {
       return { ok: false, message: "Booking not found." };
@@ -150,7 +196,46 @@ export const cancelBooking = async (bookingId: string) => {
       message: "Mock API is read-only. Booking would be cancelled here.",
       booking: existing[0],
     };
+  },
+  {
+    name: "cancelBooking",
+    description: "Cancel an existing booking.",
+    schema: z.object({ bookingId: z.string().min(1) }),
+  },
+);
+
+const safeInvoke = async <T>(fn: () => Promise<T>) => {
+  try {
+    return await fn();
   } catch (error) {
-    return { error: (error as Error).message };
+    return { error: (error as Error).message } as T;
   }
 };
+
+export const getLatestNews = async (limit = 5) =>
+  safeInvoke(() => getLatestNewsTool.invoke({ limit }));
+export const getTrendingNews = async (limit = 5) =>
+  safeInvoke(() => getTrendingNewsTool.invoke({ limit }));
+export const searchNews = async (query: string) =>
+  safeInvoke(() => searchNewsTool.invoke({ query }));
+
+export const listTickets = async (status?: string) =>
+  safeInvoke(() => listTicketsTool.invoke({ status }));
+export const searchTickets = async (query: string) =>
+  safeInvoke(() => searchTicketsTool.invoke({ query }));
+export const getIncident = async (id: string) =>
+  safeInvoke(() => getIncidentTool.invoke({ id }));
+
+export const searchPeople = async (name?: string, team?: string, location?: string) =>
+  safeInvoke(() => searchPeopleTool.invoke({ name, team, location }));
+export const getPerson = async (id: string) =>
+  safeInvoke(() => getPersonTool.invoke({ id }));
+export const getOrgChart = async (managerId: string) =>
+  safeInvoke(() => getOrgChartTool.invoke({ managerId }));
+
+export const listAvailableDesks = async (date: string, location?: string) =>
+  safeInvoke(() => listAvailableDesksTool.invoke({ date, location }));
+export const bookDesk = async (userId: string, deskId: string, date: string) =>
+  safeInvoke(() => bookDeskTool.invoke({ userId, deskId, date }));
+export const cancelBooking = async (bookingId: string) =>
+  safeInvoke(() => cancelBookingTool.invoke({ bookingId }));
