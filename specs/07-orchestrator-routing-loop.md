@@ -15,10 +15,10 @@ Implement the orchestrator routing logic and iterative loop for multi-tool/agent
 - Produce a merged response across agents.
 
 ## Tasks
-- [ ] Add routing heuristics based on keywords.
-- [ ] Allow sequential and parallel tool calls (as supported by LangGraph).
-- [ ] Add a max-steps guard (e.g., 6 tool calls).
-- [ ] Produce a merged response across agents.
+- [x] Add routing heuristics based on keywords.
+- [x] Allow sequential and parallel tool calls (as supported by LangGraph).
+- [x] Add a max-steps guard (e.g., 6 tool calls).
+- [x] Produce a merged response across agents.
 
 
 ## Acceptance Criteria
@@ -40,7 +40,7 @@ Implement the orchestrator routing logic and iterative loop for multi-tool/agent
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Added orchestrator routing with sequential/parallel fan-out, step guard, and merged agent summaries. |
 
 ## Decisions
 - 
