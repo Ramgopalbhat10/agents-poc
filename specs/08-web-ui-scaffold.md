@@ -15,10 +15,10 @@ Scaffold the React + Vite web app with Tailwind v4 and shadcn/ui (BaseUI preset)
 - Build base layout: chat area and sidebar placeholder.
 
 ## Tasks
-- [ ] Create `apps/web` via the shadcn CLI BaseUI preset:
-- [ ] `bunx --bun shadcn@latest create --preset "https://ui.shadcn.com/init?base=base&style=vega&baseColor=neutral&theme=neutral&iconLibrary=lucide&font=inter&menuAccent=subtle&menuColor=default&radius=default&template=vite" --template vite`
-- [ ] Set up Tailwind v4 and shadcn/ui (BaseUI).
-- [ ] Build base layout: chat area and sidebar placeholder.
+- [x] Create `apps/web` via the shadcn CLI BaseUI preset:
+- [x] `bunx --bun shadcn@latest create --preset "https://ui.shadcn.com/init?base=base&style=vega&baseColor=neutral&theme=neutral&iconLibrary=lucide&font=inter&menuAccent=subtle&menuColor=default&radius=default&template=vite" --template vite`
+- [x] Set up Tailwind v4 and shadcn/ui (BaseUI).
+- [x] Build base layout: chat area and sidebar placeholder.
 
 
 ## Implementation Notes
@@ -43,7 +43,7 @@ Scaffold the React + Vite web app with Tailwind v4 and shadcn/ui (BaseUI preset)
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Added a custom chat layout and sidebar placeholder on top of the shadcn BaseUI scaffold. |
 
 ## Decisions
 - 

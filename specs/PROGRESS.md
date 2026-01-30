@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/07-orchestrator-routing-loop.md` (completed on feature/orchestrator-routing-loop)
+Current task: `specs/08-web-ui-scaffold.md` (completed on feature/web-ui-scaffold)
 
-Next suggested task: `specs/08-web-ui-scaffold.md`
+Next suggested task: `specs/09-chat-streaming-integration.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.
