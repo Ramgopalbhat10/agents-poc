@@ -15,10 +15,10 @@ Add minimal dev scripts and environment configuration for running the full POC l
 - Document ports and base URLs in each app README (short).
 
 ## Tasks
-- [ ] Add root `dev` scripts to run `web`, `agents`, and `api` together.
-- [ ] Run agents via `npx @langchain/langgraph-cli dev` (not Bun).
-- [ ] Add `.env.example` files per app with required variables.
-- [ ] Document ports and base URLs in each app README (short).
+- [x] Add root `dev` scripts to run `web`, `agents`, and `api` together.
+- [x] Run agents via `npx @langchain/langgraph-cli dev` (not Bun).
+- [x] Add `.env.example` files per app with required variables.
+- [x] Document ports and base URLs in each app README (short).
 
 
 ## Acceptance Criteria
@@ -42,7 +42,7 @@ Add minimal dev scripts and environment configuration for running the full POC l
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Added env examples, app README defaults, and a root dev script to start all services. |
 
 ## Decisions
 - 

@@ -5,5 +5,7 @@ build/
 .DS_Store
 .env
 .env.*
+!.env.example
+!**/.env.example
 coverage/
 *.log

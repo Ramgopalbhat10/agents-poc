@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/10-agent-activity-panel.md` (completed on feature/agent-activity-panel)
+Current task: `specs/11-dev-scripts-env.md` (completed on feature/dev-scripts-env)
 
-Next suggested task: `specs/11-dev-scripts-env.md`
+Next suggested task: None.
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.
