@@ -16,6 +16,10 @@ Set `API_BASE_URL` to point tools at the mock API (defaults to `http://localhost
 - `OPENAI_BASE_URL` (optional for compatible providers)
 - `LLM_MODEL` (default: `gpt-5`)
 
+## Notes
+- This app uses `@langchain/openai` for LLM calls and `zod`-validated tools.
+- TypeScript module resolution is set to `NodeNext` in `apps/agents/tsconfig.json` for ESM compatibility.
+
 Example non-streaming request (stateless run):
 
 ```
