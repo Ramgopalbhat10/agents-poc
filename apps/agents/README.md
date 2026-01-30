@@ -9,6 +9,8 @@ npx @langchain/langgraph-cli dev
 
 The server exposes HTTP endpoints documented at `http://localhost:2024/docs`.
 
+Set `API_BASE_URL` to point tools at the mock API (defaults to `http://localhost:4000`).
+
 Example non-streaming request (stateless run):
 
 ```

@@ -16,11 +16,11 @@ Implement tool functions for each agent and connect them to the mock API.
 - Wire tools to the mock API base URL.
 
 ## Tasks
-- [ ] News tools: `getLatestNews`, `getTrendingNews`, `searchNews`.
-- [ ] ServiceNow tools: `listTickets`, `searchTickets`, `getIncident`.
-- [ ] People tools: `searchPeople`, `getPerson`, `getOrgChart`.
-- [ ] Booking tools: `listAvailableDesks`, `bookDesk`, `cancelBooking`.
-- [ ] Wire tools to the mock API base URL.
+- [x] News tools: `getLatestNews`, `getTrendingNews`, `searchNews`.
+- [x] ServiceNow tools: `listTickets`, `searchTickets`, `getIncident`.
+- [x] People tools: `searchPeople`, `getPerson`, `getOrgChart`.
+- [x] Booking tools: `listAvailableDesks`, `bookDesk`, `cancelBooking`.
+- [x] Wire tools to the mock API base URL.
 
 
 ## Acceptance Criteria
@@ -43,7 +43,7 @@ Implement tool functions for each agent and connect them to the mock API.
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Implemented agent tools to call the mock API and wired them into the stub agent nodes. |
 
 ## Decisions
 - 

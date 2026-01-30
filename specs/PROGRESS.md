@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/05-agents-app-skeleton.md` (completed on feature/agents-app-skeleton)
+Current task: `specs/06-agent-tools-integration.md` (completed on feature/agent-tools-integration)
 
-Next suggested task: `specs/06-agent-tools-integration.md`
+Next suggested task: `specs/07-orchestrator-routing-loop.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.
