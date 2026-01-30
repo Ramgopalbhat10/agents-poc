@@ -1,0 +1,480 @@
+{
+  "news": [
+    {
+      "id": "news_001",
+      "title": "Quarterly results exceed targets",
+      "body": "Quick update in a casual tone: we wrapped the quarter a little ahead of target and it feels good without being a big dramatic spike. Most of the lift came from renewals and expansions rather than brand new logos, which is healthy and a bit boring in the best way. The enterprise team called out that multi year renewals closed faster once we simplified the pricing summary and trimmed the redline back and forth. Support also shipped a few small workflow tweaks that shaved minutes off response time, and the customer success crew said that made their check ins feel smoother. Product wise, the biggest win was stability: fewer surprise outages, fewer on call pages, and fewer grumpy Slack threads. We also saw more usage on the analytics dashboard after the last round of UX polish.\n\nNo confetti, but lots of steady progress. On the people side, managers noted fewer open roles as the hiring funnel improved, though we are still light in data and security. We also saw better ramp time for new hires because onboarding tasks were consolidated into one place. The enablement team put together short walkthrough videos, which seems small but helped new folks get productive without so many pings. Finance flagged that travel spend is up, which makes sense with regional meetups returning, but we are still within the budget range we set in October. The sales team called out that churn is steady and predictable, and that gives us more room to plan rather than scramble.\n\nLooking ahead, the plan is to keep momentum without overreaching: tighten onboarding, finish the billing cleanup work, and keep the backlog focused on the top ten issues rather than a giant wish list. The platform team will continue the reliability push with a goal of reducing noisy alerts and improving deploy confidence. Customer success will pilot a lighter touch renewal program for mid market accounts, and product will keep the roadmap grounded in what we can deliver without stretching the team too thin. We will share a fuller readout in the all hands, along with a simple dashboard snapshot so folks can see the same numbers. For now, the headline is steady growth, better retention, calmer operations, and a team that feels less rushed and more focused. That is the kind of quarter we want to repeat. One more note: we are keeping the bonus and merit cycles on the same timeline, and leaders will share clear expectations early so nobody is guessing. This steady quarter gives us room to focus on quality without rushing the next set of commitments.",
+      "date": "2026-01-12",
+      "tags": [
+        "finance",
+        "quarterly",
+        "earnings"
+      ]
+    },
+    {
+      "id": "news_002",
+      "title": "New office opens in Austin",
+      "body": "We finally opened the Austin office and it already feels like a real home base rather than a temporary coworking space. The buildout is modest and practical: plenty of quiet rooms, a few open tables for ad hoc pairing, and the kind of kitchen you can actually eat in without balancing a plate on your laptop. The initial focus is customer success and engineering, with a handful of folks relocating and a few local hires joining over the next month. The idea is to create a place where support and product can overlap during sprint cycles and where customers can drop in when they are in town.\n\nWe picked Austin because it is easy to get to for both coasts, and the airport makes day trips more doable. It is not a big flashy opening; it is more like a steady expansion that fits our growth. Facilities is still working through signage and a couple of final access badge tweaks, so if your badge does not scan on day one, that is expected and will get sorted quickly. There are standing desks on the west side, a dedicated demo room for customer visits, and a small wellness room that is available to anyone who needs it. We are keeping the office vibe casual and practical, not showy.\n\nIf you are traveling through, you can reserve a desk via the booking tool like any other office. Please also note that the office is a short walk from the train station, which should make commuting easier. We will do a low key open house next month with coffee and snacks, but no big speeches. The main goal is to make the space functional and welcoming, and to make it easier for teams to work together without time zone gymnastics. We will also use the office as a pilot for a few workplace ideas, like a shared equipment locker and a more flexible room booking policy. If those work well, we will bring them to other locations.\n\nA few practical reminders: the building has 24 hour access, so let Facilities know if you need after hours entry. Visitors must sign in at the front desk and will receive a temporary badge. For conference rooms, please clean up after use and leave the tech cart plugged in. We want the space to feel cared for without needing a lot of rules. If you have ideas for how to make the office better, send them to Facilities or drop them in the #austin-office channel. We want this to feel like a place that supports real work and real community, not just a line item on a growth slide.",
+      "date": "2025-12-05",
+      "tags": [
+        "facilities",
+        "expansion",
+        "austin"
+      ]
+    },
+    {
+      "id": "news_003",
+      "title": "Security training week",
+      "body": "Security training week is coming up and yes, it is mandatory, but we are keeping it short and human. Think of it as a practical refresher rather than a compliance marathon. The sessions cover the basics we all trip over: phishing in Slack, suspicious calendar invites, and how to handle that random request for gift cards or quick wire approvals. We will also do a short walkthrough on reporting incidents so you do not have to remember which form to fill out. The format is simple: one live session with Q and A, plus a brief follow up quiz that should take less than ten minutes. If you cannot attend the live slot, there will be a recording and a separate time to ask questions.\n\nWe are also sharing a short cheat sheet you can keep in your bookmarks, with the top five things to do when you are unsure about a message. This is not about catching anyone out; it is about building the habit of slowing down for ten seconds when something feels off. Security is also hosting office hours during the week, so if you have a weird email or a suspicious link you want a second opinion on, bring it. Our recent tabletop exercise showed that most incidents start with a simple mistake, not a fancy attack, so making the basics easy is still the biggest win.\n\nPlease plan to complete the training by the end of the week so we can close out the requirement without chasing people down in the last minute. If you are on vacation, let your manager know and we will schedule a make up session. We will also send a few reminders in the morning and a short summary after the training is done, including any policy updates. The training is updated with real examples from the past year, so it should feel relevant, not generic. We will walk through a mock phishing email and show you the red flags, and we will explain why reporting quickly helps the whole company respond faster.\n\nThanks for keeping this easy and quick. If you have suggestions for improving the training, send them to Security. We want this to feel useful, not just required. Our goal is to make safe habits feel normal and effortless, and this is one of the simplest ways to get there. We will also cover a short section on device hygiene, like keeping updates on and avoiding random browser extensions. It is practical and meant to reduce small risks that add up over time.",
+      "date": "2026-01-22",
+      "tags": [
+        "security",
+        "training",
+        "compliance"
+      ]
+    },
+    {
+      "id": "news_004",
+      "title": "New parental leave policy announced",
+      "body": "We are updating the parental leave policy and the short version is simple: 16 weeks paid leave for all parents, and we are making the language neutral so no one has to fit into a narrow box. The policy applies to birth, adoption, and foster placement, and it is designed to be flexible rather than one size fits all. We have heard feedback that a rigid split between primary and secondary caregivers does not match how families actually work, so we are removing that distinction. You can take the leave in one block or split it into two parts within the first year.\n\nWe are also adding a two week transition period when you return, so you can ease back in rather than jumping from zero to full speed on day one. This is a real policy change, not a buzzword update, and it is meant to reduce stress during a major life moment. Managers will receive a short guide with do and do not guidance, plus tips on coverage planning. If you are planning a leave, talk with People Ops early so we can get the dates and handoffs lined up. The goal is to make leave planning feel predictable and supportive, not like a negotiation.\n\nWe will continue to review the policy annually, but we are not tying it to tenure or performance. If you have questions about how it applies to your situation, People Ops will hold office hours next week. We are grateful to everyone who shared feedback during the review and helped us make the policy clearer and more generous. Please share the news with your teams and let us know if anything in the policy is confusing. We want the rollout to be smooth and respectful of everyone\u2019s time.\n\nA few quick notes: benefits remain active during leave, and your role is protected while you are out. If you need a phased return or a temporary reduction in hours, we can discuss options. There is also a caregiver support program with resources for childcare and local services, which People Ops can walk you through. The policy is effective immediately, and anyone already on leave can opt into the new structure. This is about being a better place to work and acknowledging real life. We are happy to answer questions and will keep the documentation updated so there are no surprises. Thanks for helping us make this better for everyone.",
+      "date": "2025-11-18",
+      "tags": [
+        "people",
+        "benefits",
+        "policy"
+      ]
+    },
+    {
+      "id": "news_005",
+      "title": "Platform maintenance window",
+      "body": "Heads up about a planned maintenance window this Saturday from 02:00 to 04:00 UTC. This is the kind of routine work that keeps everything reliable, not a scary emergency. We will be patching database replicas, rotating keys, and doing a bit of cleanup on background job queues. The main effect you might notice is brief read only mode on a few internal admin pages and possible delays for batch exports. The core app should stay available, and we are timing it for the lowest usage window.\n\nIf you are working during that time and notice odd behavior, it is probably related. We will post a status update in the #ops channel at the start and end of the window. There is also a rollback plan if anything looks off, so the team can revert quickly. We are keeping this scoped because we do not want to drag maintenance across a whole morning. If you have a demo or a customer event in that window, please let your team lead know and we can coordinate.\n\nWe do not expect any data loss or disruption beyond a few minutes of delays. If you are curious, the main driver is a storage upgrade that should improve performance and reduce latency spikes we have seen in the past month. The platform team has tested the changes in staging and is following the standard playbook. We will also take a quick snapshot before starting, so if we need to restore anything we can do it quickly. The work is straightforward, but we still treat these windows seriously because small mistakes can compound fast.\n\nAs always, thanks for patience with these small windows of downtime. They are a little inconvenient but they save a lot of fire drills later. We will publish a short summary after the maintenance is complete, including any follow up tasks or observed improvements. If you notice issues after the window, please report them in #ops with a quick description and the time you saw them. That helps us correlate events and verify the upgrade did what we expected. We will also use this window to clear a backlog of minor maintenance tasks that are too risky to do during the day. If anything unusual comes up, the on call will provide immediate updates so you are never in the dark. Thanks for planning around it, and let us know if you see anything that looks off once the window ends.",
+      "date": "2026-01-18",
+      "tags": [
+        "maintenance",
+        "platform",
+        "downtime"
+      ]
+    },
+    {
+      "id": "news_006",
+      "title": "Customer satisfaction scores hit record high",
+      "body": "Quick and happy update on customer satisfaction: response times are down and NPS is up, across all regions. The biggest impact came from a few small process changes rather than a giant overhaul. Support now has a lighter triage queue in the morning, and the handoff between Tier 1 and Tier 2 is more consistent, so customers are not repeating their story. We also tweaked macros so they feel more conversational and less like templates, which sounds minor but customers notice. Engineering helped by labeling a handful of recurring issues and shipping fixes within the same week, which reduced the backlog of lingering tickets.\n\nThe knowledge base refresh also did some heavy lifting: fewer dead links and more concise steps meant customers could self serve without feeling lost. NPS is not the only thing that matters, but it does reflect a real improvement in the day to day experience. This is a shout out to support and the teams who collaborated on quick fixes rather than waiting for perfect solutions. The plan is to keep this momentum with regular cross functional reviews, not just a one time push. If you have ideas for next improvements, drop them in the #support-feedback channel.\n\nWe want to keep things simple and reliable, not just fast for a week. Also, if you know a customer who has been patient through a tough issue, send a thank you note. It makes a difference. The support team is also tracking top pain points in a shared doc, which is now visible to product and engineering. That shared view helps prioritize fixes based on real customer friction rather than loud internal guesses. We will keep the dashboard updated monthly and share the highlights at the all hands.\n\nLonger term, we are experimenting with a few quality metrics beyond raw response time, like first contact resolution and clarity of follow up. We are also testing a new feedback prompt that lets customers rate the helpfulness of an answer in plain language. Nothing fancy, just a way to spot when the tone misses the mark. Overall, the trend is positive and it feels sustainable. Thanks to everyone who contributed, especially the folks who quietly made small changes that had a big effect. We are also rolling out a short weekly review where support flags two or three themes to product, so fixes stay aligned with customer pain. That steady feedback loop is what makes improvements stick.",
+      "date": "2025-12-20",
+      "tags": [
+        "customer",
+        "support",
+        "nps"
+      ]
+    },
+    {
+      "id": "news_007",
+      "title": "Open roles posted for Q1",
+      "body": "We have posted a new round of Q1 openings and there is a little something for most functions: data, product, sales, and a couple of engineering roles tied to platform reliability. This is not a huge hiring wave, more of a targeted set of additions to fill gaps we already feel. If you know people who would thrive here, please send them our way. Referrals still get priority review, and the recruiting team can help with outreach if you are unsure about the best approach.\n\nWe are especially looking for folks who are comfortable in a scrappy environment where priorities can shift, but where we also care a lot about documentation and clarity. For product, the focus is on someone who can run discovery without turning everything into a long workshop. For data, we need someone who can make pipelines reliable and readable. For sales, we are looking for relationship builders who are comfortable with both new business and expansion. As always, if you refer someone, please include a short note on why you think they are a fit. It helps hiring teams move faster.\n\nThe posts include compensation ranges and location guidance, so candidates can make an informed decision up front. If you have questions about a role, ping the hiring manager directly and they will gladly answer. We would rather have fewer, higher quality interviews than a huge funnel with poor signal. Thanks for keeping the team strong.\n\nA few logistics: recruiting will host a short referral info session next week with tips on how to reach out and what kind of intro helps most. There will also be a shared doc with the role priorities, so you can see which openings are most urgent. If you know someone who is a maybe, send them the role anyway and let them decide. We are keeping the process lean, with no take home projects unless absolutely necessary. Our goal is to respect candidate time while still getting a good signal. If you notice that a role description feels unclear, please tell recruiting so we can tighten it. Clear posts lead to better matches. Thanks again for helping us grow in a thoughtful way. We are still hiring intentionally, so there will be no sudden spikes or surprise headcount shifts. Think of this as filling key gaps while keeping team balance healthy and manageable. If you are unsure who to refer for a role, recruiting can suggest profiles based on your network and the skills needed.",
+      "date": "2026-01-08",
+      "tags": [
+        "hiring",
+        "people",
+        "recruiting"
+      ]
+    },
+    {
+      "id": "news_008",
+      "title": "Expense policy update",
+      "body": "Small but important update to the expense policy: receipts are now required for anything over $25. This is mostly about keeping audits easy and avoiding the last minute scramble when finance needs documentation. The policy also clarifies which categories are automatically approved versus which need manager review. Meals with customers are still fine, just include the names and the business context. If you are traveling, ride shares and hotels should always include a receipt, even if the total is low. We are not trying to make expense reports painful, just consistent.\n\nThe expense tool also now supports attaching photos from your phone, so you can upload while you are still at the restaurant rather than digging through emails later. If you lose a receipt, you can still submit an explanation, but finance may follow up. The main goal is to keep reimbursements fast and avoid delays. This change does not affect per diem policies for international travel, which remain the same. We will review the policy in a few months and adjust if the threshold feels too strict or too loose. For now, please make sure your team is aware and update any internal docs that mention the old threshold.\n\nIf you have questions, finance will host a short Q and A in the #finance channel tomorrow. They will also publish a simple cheat sheet with examples of what does and does not need a receipt. The goal is clarity, not nitpicking. If you are buying software or tools, please still follow the procurement guidelines and avoid personal cards when possible. We are trying to keep everything transparent and easy to reconcile.\n\nWe know policy changes can be annoying when they feel arbitrary. This one is about making the monthly close smoother and reducing the time finance spends chasing down missing info. It should also help managers approve reports faster, since the documentation will already be there. If you have suggestions on how to make the expense flow better, please send them along. We are open to improvements, especially if they save people time. If you have recurring subscriptions, please note them in the memo field so finance can track renewals and avoid surprises. This helps budgeting and reduces the need for follow up questions. If you need help finding receipts, the expense tool search now supports vendor names and dates. We know this adds a small step, but the time saved later on reimbursements and audits is worth it.",
+      "date": "2025-12-02",
+      "tags": [
+        "finance",
+        "policy",
+        "expenses"
+      ]
+    },
+    {
+      "id": "news_009",
+      "title": "Incident response tabletop exercise",
+      "body": "Next Wednesday, Security and IT are running a tabletop exercise to walk through an incident response scenario. This is a low stakes simulation where we practice decisions, not a live drill with alerts. The scenario is intentionally realistic and will include communication steps, escalation paths, and decisions about customer notifications. We are inviting a mix of people from engineering, support, comms, and leadership so we can stress test the whole chain. The goal is not to score anyone, but to see where our process feels slow or unclear.\n\nWe will capture notes and turn them into small process improvements, like updating the on call rotation doc or clarifying who approves status updates. The last exercise showed that people were unsure who owned the final customer email, so that is a known area to revisit. If you are part of the invited group, please come ready to participate and keep the conversation practical. If you are not invited, do not worry, we will share the learnings after. This is one of those boring things that helps when a real incident happens, so thanks in advance for treating it seriously.\n\nWe will keep the session under 90 minutes and schedule it at a time that avoids major customer calls. If you have ideas for scenarios we should practice in the future, send them to Security. The focus this time is on clarity and speed: who gets notified, what the initial message looks like, and how we decide on next steps when information is incomplete. We will also review how we handle internal comms so teams know what is happening without a flood of noise.\n\nAfter the exercise, Security will share a short write up with action items and owners. Expect a few small doc updates and maybe a couple of tweaks to the incident tooling. If you have seen similar exercises at past companies and have tips, bring them. We want the process to be practical and calm, not theatrical. Thanks for helping make this smoother for everyone. We will also walk through how we coordinate with legal and privacy teams when a situation involves customer data. That part is often fuzzy, so this is a good chance to make the steps clear and calm. We want everyone to leave the exercise feeling confident about who does what and when. Clear roles reduce stress in the moment and help us move faster with fewer misunderstandings.",
+      "date": "2026-01-15",
+      "tags": [
+        "security",
+        "it",
+        "training"
+      ]
+    },
+    {
+      "id": "news_010",
+      "title": "Winter volunteer day",
+      "body": "We are planning a winter volunteer day in February and would love for teams to join. This is meant to be a relaxed, feel good day where we give back locally and spend time together outside of our usual work routines. We are partnering with a few community organizations that focus on food security, education support, and neighborhood cleanup. You can pick the project that fits your team\u2019s schedule and interests. Participation is optional, but we are covering the time so you do not have to use PTO.\n\nIf you are remote, there will be a small stipend so you can volunteer locally as well. We will share a signup link next week, along with project details and meeting points. Please try to sign up early so we can balance the group sizes. We are keeping the day flexible: no long speeches, just some shared work and a casual wrap up. Bring comfortable clothes and a good attitude, and we will handle the rest.\n\nIf you have a favorite local organization you want us to consider for future events, let People Ops know. The goal is to make this a yearly tradition that feels genuine and low pressure. Also, if your team already has a volunteer tradition, you can continue that and we will count it as participation. We just want to support more of these small community efforts. We will share photos afterward for anyone who wants them, but there is no obligation to post or share publicly.\n\nA quick reminder: volunteering does not need to be a big production to matter. Showing up for a few hours, helping pack boxes, or cleaning a park can make a real difference. It is also a nice way to meet teammates you do not normally work with. If you have questions about accessibility or accommodations, please reach out to People Ops and they will make sure everyone can participate comfortably. We are excited to do something kind and simple together, and we appreciate everyone who joins in. We will also provide a simple template for teams who want to organize their own volunteer day later in the year. It covers coordination tips, safety basics, and a short checklist that keeps planning light. We want participation to feel easy and inclusive, not like another obligation on your calendar. If transportation or scheduling is a concern, we can help coordinate carpools or shared timeslots.",
+      "date": "2026-01-05",
+      "tags": [
+        "culture",
+        "volunteering",
+        "people"
+      ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": "inc_1001",
+      "title": "VPN access intermittently fails",
+      "status": "open",
+      "priority": "high",
+      "assignee": "jordan.lee",
+      "createdAt": "2026-01-27T10:14:00Z"
+    },
+    {
+      "id": "inc_1002",
+      "title": "Laptop replacement request",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "riley.chan",
+      "createdAt": "2026-01-25T16:32:00Z"
+    },
+    {
+      "id": "inc_1003",
+      "title": "Printer jam on floor 5",
+      "status": "resolved",
+      "priority": "low",
+      "assignee": "sam.patel",
+      "createdAt": "2026-01-20T09:02:00Z"
+    },
+    {
+      "id": "inc_1004",
+      "title": "Unable to access shared drive",
+      "status": "open",
+      "priority": "high",
+      "assignee": "alex.rivera",
+      "createdAt": "2026-01-28T14:45:00Z"
+    },
+    {
+      "id": "inc_1005",
+      "title": "Email client crashing on startup",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "morgan.kent",
+      "createdAt": "2026-01-23T11:20:00Z"
+    },
+    {
+      "id": "inc_1006",
+      "title": "Conference room display not connecting",
+      "status": "open",
+      "priority": "low",
+      "assignee": "taylor.grant",
+      "createdAt": "2026-01-26T08:10:00Z"
+    },
+    {
+      "id": "inc_1007",
+      "title": "New hire onboarding accounts",
+      "status": "resolved",
+      "priority": "medium",
+      "assignee": "riley.chan",
+      "createdAt": "2026-01-15T13:05:00Z"
+    },
+    {
+      "id": "inc_1008",
+      "title": "Slow Wi-Fi on 3rd floor",
+      "status": "open",
+      "priority": "low",
+      "assignee": "jordan.lee",
+      "createdAt": "2026-01-24T17:40:00Z"
+    },
+    {
+      "id": "inc_1009",
+      "title": "Password reset request",
+      "status": "resolved",
+      "priority": "low",
+      "assignee": "sam.patel",
+      "createdAt": "2026-01-19T10:30:00Z"
+    },
+    {
+      "id": "inc_1010",
+      "title": "CRM access request",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "morgan.kent",
+      "createdAt": "2026-01-21T09:45:00Z"
+    }
+  ],
+  "people": [
+    {
+      "id": "emp_001",
+      "name": "Avery Brooks",
+      "title": "Engineering Manager",
+      "team": "Platform",
+      "managerId": "emp_010",
+      "location": "New York",
+      "email": "avery.brooks@example.com"
+    },
+    {
+      "id": "emp_002",
+      "name": "Jordan Lee",
+      "title": "IT Support Specialist",
+      "team": "IT",
+      "managerId": "emp_011",
+      "location": "Austin",
+      "email": "jordan.lee@example.com"
+    },
+    {
+      "id": "emp_003",
+      "name": "Riley Chan",
+      "title": "Service Desk Lead",
+      "team": "IT",
+      "managerId": "emp_011",
+      "location": "Chicago",
+      "email": "riley.chan@example.com"
+    },
+    {
+      "id": "emp_004",
+      "name": "Morgan Kent",
+      "title": "Systems Administrator",
+      "team": "IT",
+      "managerId": "emp_011",
+      "location": "New York",
+      "email": "morgan.kent@example.com"
+    },
+    {
+      "id": "emp_005",
+      "name": "Alex Rivera",
+      "title": "Security Analyst",
+      "team": "Security",
+      "managerId": "emp_012",
+      "location": "Remote",
+      "email": "alex.rivera@example.com"
+    },
+    {
+      "id": "emp_006",
+      "name": "Jamie Soto",
+      "title": "Product Manager",
+      "team": "Product",
+      "managerId": "emp_013",
+      "location": "San Francisco",
+      "email": "jamie.soto@example.com"
+    },
+    {
+      "id": "emp_007",
+      "name": "Taylor Grant",
+      "title": "Workplace Coordinator",
+      "team": "Facilities",
+      "managerId": "emp_014",
+      "location": "Austin",
+      "email": "taylor.grant@example.com"
+    },
+    {
+      "id": "emp_008",
+      "name": "Priya Desai",
+      "title": "Data Scientist",
+      "team": "Data",
+      "managerId": "emp_010",
+      "location": "Chicago",
+      "email": "priya.desai@example.com"
+    },
+    {
+      "id": "emp_009",
+      "name": "Chris Nolan",
+      "title": "Sales Director",
+      "team": "Sales",
+      "managerId": "emp_015",
+      "location": "New York",
+      "email": "chris.nolan@example.com"
+    },
+    {
+      "id": "emp_010",
+      "name": "Casey Morgan",
+      "title": "Director of Engineering",
+      "team": "Platform",
+      "managerId": null,
+      "location": "New York",
+      "email": "casey.morgan@example.com"
+    },
+    {
+      "id": "emp_011",
+      "name": "Sam Patel",
+      "title": "IT Operations Manager",
+      "team": "IT",
+      "managerId": null,
+      "location": "Austin",
+      "email": "sam.patel@example.com"
+    },
+    {
+      "id": "emp_012",
+      "name": "Dana Wu",
+      "title": "Head of Security",
+      "team": "Security",
+      "managerId": null,
+      "location": "Remote",
+      "email": "dana.wu@example.com"
+    },
+    {
+      "id": "emp_013",
+      "name": "Lee Chen",
+      "title": "Director of Product",
+      "team": "Product",
+      "managerId": null,
+      "location": "San Francisco",
+      "email": "lee.chen@example.com"
+    },
+    {
+      "id": "emp_014",
+      "name": "Maria Gomez",
+      "title": "Facilities Manager",
+      "team": "Facilities",
+      "managerId": null,
+      "location": "Austin",
+      "email": "maria.gomez@example.com"
+    },
+    {
+      "id": "emp_015",
+      "name": "Harper Reed",
+      "title": "VP of Sales",
+      "team": "Sales",
+      "managerId": null,
+      "location": "New York",
+      "email": "harper.reed@example.com"
+    }
+  ],
+  "desks": [
+    {
+      "id": "desk_ny_101",
+      "location": "New York",
+      "name": "Hudson-101",
+      "amenities": [
+        "monitor",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_ny_102",
+      "location": "New York",
+      "name": "Hudson-102",
+      "amenities": [
+        "monitor"
+      ]
+    },
+    {
+      "id": "desk_ny_103",
+      "location": "New York",
+      "name": "Hudson-103",
+      "amenities": [
+        "standing",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_ny_104",
+      "location": "New York",
+      "name": "Hudson-104",
+      "amenities": [
+        "monitor",
+        "ergonomic"
+      ]
+    },
+    {
+      "id": "desk_atx_201",
+      "location": "Austin",
+      "name": "LoneStar-201",
+      "amenities": [
+        "standing",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_atx_202",
+      "location": "Austin",
+      "name": "LoneStar-202",
+      "amenities": [
+        "monitor",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_atx_203",
+      "location": "Austin",
+      "name": "LoneStar-203",
+      "amenities": [
+        "monitor"
+      ]
+    },
+    {
+      "id": "desk_chi_301",
+      "location": "Chicago",
+      "name": "Lakefront-301",
+      "amenities": [
+        "standing",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_sf_401",
+      "location": "San Francisco",
+      "name": "Bay-401",
+      "amenities": [
+        "monitor",
+        "dock",
+        "ergonomic"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "book_001",
+      "userId": "emp_001",
+      "deskId": "desk_ny_101",
+      "date": "2026-01-30",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_002",
+      "userId": "emp_002",
+      "deskId": "desk_atx_201",
+      "date": "2026-01-29",
+      "status": "cancelled"
+    },
+    {
+      "id": "book_003",
+      "userId": "emp_006",
+      "deskId": "desk_sf_401",
+      "date": "2026-02-03",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_004",
+      "userId": "emp_008",
+      "deskId": "desk_chi_301",
+      "date": "2026-02-01",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_005",
+      "userId": "emp_007",
+      "deskId": "desk_atx_202",
+      "date": "2026-01-31",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_006",
+      "userId": "emp_004",
+      "deskId": "desk_ny_104",
+      "date": "2026-02-04",
+      "status": "pending"
+    },
+    {
+      "id": "book_007",
+      "userId": "emp_003",
+      "deskId": "desk_ny_103",
+      "date": "2026-02-02",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_008",
+      "userId": "emp_009",
+      "deskId": "desk_ny_102",
+      "date": "2026-02-05",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_009",
+      "userId": "emp_005",
+      "deskId": "desk_atx_203",
+      "date": "2026-02-06",
+      "status": "cancelled"
+    }
+  ]
+}
