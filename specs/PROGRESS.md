@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/03-mock-api-server-bun.md` (completed on feature/mock-api-server-bun)
+Current task: `specs/04-realistic-mock-dataset.md` (completed on feature/realistic-mock-dataset)
 
-Next suggested task: `specs/04-realistic-mock-dataset.md`
+Next suggested task: `specs/05-agents-app-skeleton.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.

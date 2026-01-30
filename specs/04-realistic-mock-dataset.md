@@ -14,9 +14,9 @@ Create a realistic mock dataset for news, tickets, people, desks, and bookings.
 - Ensure referential consistency (e.g., booking deskId exists).
 
 ## Tasks
-- [ ] Create a JSON dataset file used by the mock API.
-- [ ] Include realistic quantities and variety across fields (names, teams, locations, statuses).
-- [ ] Ensure referential consistency (e.g., booking deskId exists).
+- [x] Create a JSON dataset file used by the mock API.
+- [x] Include realistic quantities and variety across fields (names, teams, locations, statuses).
+- [x] Ensure referential consistency (e.g., booking deskId exists).
 
 
 ## Acceptance Criteria
@@ -38,7 +38,7 @@ Create a realistic mock dataset for news, tickets, people, desks, and bookings.
 ## Dev Log
 | Date | Entry |
 | --- | --- |
-|  |  |
+| 2026-01-30 | Verified and expanded the mock dataset with additional people, desks, bookings, and tickets while maintaining referential consistency. |
 
 ## Decisions
 - 

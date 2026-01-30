@@ -160,10 +160,10 @@ Minimal env vars:
 - `MOCK_API_PORT` (json server)
 
 ## Scripts (Suggested)
-- `bun run dev` — start all apps (web + agents + mock api)
-- `bun run dev:web`
-- `bun run dev:agents` (should call `npx @langchain/langgraph-cli dev`)
-- `bun run dev:api`
+- `bun run dev` — start the mock api (web + agents will join once scaffolded)
+- `bun run dev:web` — proxy to `apps/web`
+- `bun run dev:agents` — proxy to `apps/agents` (should call `npx @langchain/langgraph-cli dev`)
+- `bun run dev:api` — proxy to `apps/api`
 
 ## Development Principles
 - Prefer small, explicit tools.

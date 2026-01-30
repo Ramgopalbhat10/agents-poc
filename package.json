@@ -4,5 +4,11 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev": "bun run --cwd apps/api dev",
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:agents": "bun run --cwd apps/agents dev",
+    "dev:web": "bun run --cwd apps/web dev"
+  }
 }

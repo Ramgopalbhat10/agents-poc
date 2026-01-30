@@ -191,6 +191,30 @@
       "priority": "medium",
       "assignee": "morgan.kent",
       "createdAt": "2026-01-21T09:45:00Z"
+    },
+    {
+      "id": "inc_1011",
+      "title": "SSO group sync delay",
+      "status": "open",
+      "priority": "high",
+      "assignee": "noah.kim",
+      "createdAt": "2026-01-29T12:10:00Z"
+    },
+    {
+      "id": "inc_1012",
+      "title": "VPN client update request",
+      "status": "resolved",
+      "priority": "low",
+      "assignee": "jordan.lee",
+      "createdAt": "2026-01-18T15:25:00Z"
+    },
+    {
+      "id": "inc_1013",
+      "title": "Seattle office desk setup",
+      "status": "in_progress",
+      "priority": "medium",
+      "assignee": "taylor.grant",
+      "createdAt": "2026-01-29T09:30:00Z"
     }
   ],
   "people": [
@@ -328,6 +352,33 @@
       "managerId": null,
       "location": "New York",
       "email": "harper.reed@example.com"
+    },
+    {
+      "id": "emp_016",
+      "name": "Noah Kim",
+      "title": "Backend Engineer",
+      "team": "Platform",
+      "managerId": "emp_010",
+      "location": "New York",
+      "email": "noah.kim@example.com"
+    },
+    {
+      "id": "emp_017",
+      "name": "Elena Rossi",
+      "title": "Product Designer",
+      "team": "Product",
+      "managerId": "emp_013",
+      "location": "San Francisco",
+      "email": "elena.rossi@example.com"
+    },
+    {
+      "id": "emp_018",
+      "name": "Quinn Howard",
+      "title": "Account Executive",
+      "team": "Sales",
+      "managerId": "emp_015",
+      "location": "Chicago",
+      "email": "quinn.howard@example.com"
     }
   ],
   "desks": [
@@ -410,6 +461,33 @@
         "dock",
         "ergonomic"
       ]
+    },
+    {
+      "id": "desk_sf_402",
+      "location": "San Francisco",
+      "name": "Bay-402",
+      "amenities": [
+        "monitor",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_sea_501",
+      "location": "Seattle",
+      "name": "Pine-501",
+      "amenities": [
+        "monitor",
+        "dock"
+      ]
+    },
+    {
+      "id": "desk_den_601",
+      "location": "Denver",
+      "name": "Ridge-601",
+      "amenities": [
+        "standing",
+        "monitor"
+      ]
     }
   ],
   "bookings": [
@@ -474,6 +552,34 @@
       "userId": "emp_005",
       "deskId": "desk_atx_203",
       "date": "2026-02-06",
+      "status": "cancelled"
+    },
+    {
+      "id": "book_010",
+      "userId": "emp_016",
+      "deskId": "desk_sea_501",
+      "date": "2026-02-07",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_011",
+      "userId": "emp_017",
+      "deskId": "desk_sf_402",
+      "date": "2026-02-08",
+      "status": "pending"
+    },
+    {
+      "id": "book_012",
+      "userId": "emp_018",
+      "deskId": "desk_den_601",
+      "date": "2026-02-09",
+      "status": "confirmed"
+    },
+    {
+      "id": "book_013",
+      "userId": "emp_002",
+      "deskId": "desk_sea_501",
+      "date": "2026-02-10",
       "status": "cancelled"
     }
   ]
