@@ -1,0 +1,17 @@
+{
+  "name": "@agents-poc/agents",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npx @langchain/langgraph-cli dev",
+    "start": "npx @langchain/langgraph-cli dev"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.70",
+    "@langchain/langgraph": "^0.4.9"
+  }
+}

@@ -1,8 +1,8 @@
 # PROGRESS
 
-Current task: `specs/04-realistic-mock-dataset.md` (completed on feature/realistic-mock-dataset)
+Current task: `specs/05-agents-app-skeleton.md` (completed on feature/agents-app-skeleton)
 
-Next suggested task: `specs/05-agents-app-skeleton.md`
+Next suggested task: `specs/06-agent-tools-integration.md`
 
 Notes:
 - Before starting a new spec, confirm you are on its `feature/<slug>` branch; if not, create/switch first.
